@@ -7,7 +7,7 @@
     "light": "#07C983",
     "dark": "#15803D"
   },
-  "favicon": "/redocly-white-logo.svg",
+  "favicon": "images/redocly-white-logo.svg",
   "navigation": {
     "tabs": [
       {
