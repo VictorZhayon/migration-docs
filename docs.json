@@ -12,20 +12,7 @@
     "tabs": [
       {
         "tab": "Products",
-          "menu": [
-            {
-              "item": "",
-            "groups": [
-              {
-                "group": "",
-                "pages": [
-                  
-                ]
-              },
-            ],
-            },
-          ],
-        ]
+        "groups": []
       },
       {
         "tab": "Docs",
@@ -54,7 +41,7 @@
       {
         "tab": "Customers",
         "groups": []
-      },
+      }
     ],
     "global": {
       "anchors": [
@@ -90,15 +77,7 @@
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+    ]
   },
   "footer": {
     "socials": {
