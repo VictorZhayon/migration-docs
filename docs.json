@@ -9,15 +9,45 @@
   },
   "favicon": "images/redocly-white-logo.svg",
   "navigation": {
-    "tab": "Docs",
-    "groups": [{
-      "group": "API documentation",
-      "pages": [
-        "/quickstart.mdx"
-      ]
-    }]
-  },
-  "global": {
+    "tabs": [
+      {
+        "tab": "Products",
+        "menu": [{
+          "label": "Redocly",
+          "href": "https://redocly.com",
+          "description": "API documentation platform for teams"
+        }]
+      },
+      {
+        "tab": "Docs",
+        "groups": [
+          {
+            "group": "API documentation",
+            "pages": [
+              "api-reference/introduction"
+            ]
+          },
+          {
+            "group": "Endpoint examples",
+            "pages": [
+              "api-reference/endpoint/get",
+              "api-reference/endpoint/create",
+              "api-reference/endpoint/delete",
+              "api-reference/endpoint/webhook"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Learn",
+        "groups": []
+      },
+      {
+        "tab": "Customers",
+        "groups": []
+      }
+    ],
+    "global": {
       "anchors": [
         {
           "anchor": "Documentation",
