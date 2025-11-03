@@ -12,7 +12,11 @@
     "tabs": [
       {
         "tab": "Products",
-        "groups": []
+        "menu": [{
+          "label": "Redocly",
+          "href": "https://redocly.com",
+          "description": "API documentation platform for teams"
+        }]
       },
       {
         "tab": "Docs",
