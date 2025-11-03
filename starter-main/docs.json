@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Mint Starter Kit",
+  "theme": "maple",
+  "name": "Redocly",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
@@ -11,7 +11,7 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Products",
         "groups": [
           {
             "group": "Getting started",
@@ -48,7 +48,7 @@
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "Docs",
         "groups": [
           {
             "group": "API documentation",
@@ -66,7 +66,15 @@
             ]
           }
         ]
-      }
+      },
+      {
+        "tab": "Learn",
+        "groups": []
+      },
+      {
+        "tab": "Customers",
+        "groups": []
+      },
     ],
     "global": {
       "anchors": [
