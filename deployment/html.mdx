@@ -1,0 +1,136 @@
+import { Callout, Tabs, Tab } from 'nextra/components'
+
+export const metadata = {
+  title: 'Use the Redoc HTML element',
+  description: 'Learn how to integrate Redoc in HTML pages and customize its behavior'
+}
+
+# Use Redoc in HTML
+
+To render API documentation in an HTML page, start with the template below and
+replace the `spec-url` value with the local file path or URL of your API
+description.
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Redoc</title>
+    <!-- needed for adaptive design -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">
+
+    <!--
+    Redoc doesn't change outer page styles
+    -->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <redoc spec-url='http://petstore.swagger.io/v2/swagger.json'></redoc>
+    <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
+  </body>
+</html>
+```
+
+<Callout type="success">
+  **URL or local file**
+  
+  Set `spec-url` to a relative path if the file is local, e.g. `spec-url=my-api.yaml`. Use a full URL like the example above if it's hosted elsewhere.
+</Callout>
+
+Open the HTML file in your browser to see the HTML documentation rendering.
+
+## Configure Redoc
+
+Redoc is highly configurable, find a [full list of configuration options](../config) on the dedicated page.
+
+To configure Redoc in HTML, add the property names to the HTML tag:
+
+```html
+<redoc 
+  spec-url='http://petstore.swagger.io/v2/swagger.json' 
+  required-props-first=true
+></redoc>
+```
+
+### Theme configuration
+
+For theme configuration, supply options as a JSON string:
+
+```html
+<redoc 
+  spec-url='http://petstore.swagger.io/v2/swagger.json'
+  required-props-first=true
+  theme='{
+    "sidebar": {
+      "backgroundColor": "lightblue"
+    }
+  }'
+></redoc>
+```
+
+Check out the [list of options for theme configuration](../config#theme-settings) for more customization options.
+
+## Advanced options
+
+### The Redoc object
+
+<Callout type="info">
+  As an alternative to the HTML tag, you can initialize Redoc using JavaScript for dynamic content or to attach to existing containers.
+</Callout>
+
+The Redoc object offers an `init` function:
+
+```js
+Redoc.init(specOrSpecUrl, options, element, callback)
+```
+
+Parameters:
+- `specOrSpecUrl`: JSON object with OpenAPI definition or file name/URL
+- `options`: See the [configuration reference](../config)
+- `element`: Target DOM element
+- `callback`(optional): Called after rendering or on error
+
+Example implementation:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head />
+  <body>
+    <H1>Redoc in action</H1>
+    <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
+    <div id="redoc-container"></div>
+
+    <script>
+      Redoc.init('http://petstore.swagger.io/v2/swagger.json', {
+        "expandResponses": "200,400"
+      }, document.getElementById('redoc-container'))
+    </script>
+  </body>
+</html>
+```
+
+### Self-host dependencies
+
+<Tabs items={['CDN', 'Self-hosted']}>
+  <Tab>
+    ```html
+    <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
+    ```
+  </Tab>
+  <Tab>
+    First install `redoc`:
+    ```bash
+    npm install redoc
+    ```
+    
+    Then reference locally:
+    ```html
+    <script src="node_modules/redoc/bundles/redoc.standalone.js">

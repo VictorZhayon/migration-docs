@@ -1,0 +1,88 @@
+import { Steps, Tabs, Tab, Callout } from 'nextra/components'
+
+export const metadata = {
+  title: 'Use the Redoc React component',
+  description: 'Learn how to integrate Redoc as a React component in your application'
+}
+
+# How to use the Redoc React component
+
+<Steps>
+
+### Install Dependencies
+
+Install the required dependencies:
+
+```bash
+npm i react react-dom mobx styled-components core-js
+```
+
+### Import RedocStandalone
+
+```jsx
+import { RedocStandalone } from 'redoc';
+```
+
+### Use the Component
+
+<Tabs items={['URL Specification', 'Object Specification']}>
+  <Tab>
+    ```jsx
+    <RedocStandalone specUrl="url/to/your/spec"/>
+    ```
+  </Tab>
+  <Tab>
+    ```jsx
+    <RedocStandalone spec={/* spec as an object */}/>
+    ```
+  </Tab>
+</Tabs>
+
+</Steps>
+
+## Configuration Options
+
+### Theme Customization
+
+You can customize the appearance and behavior using the `options` prop:
+
+```jsx
+<RedocStandalone
+  specUrl="http://petstore.swagger.io/v2/swagger.json"
+  options={{
+    nativeScrollbars: true,
+    theme: { 
+      colors: { 
+        primary: { 
+          main: '#dd5522' 
+        } 
+      } 
+    },
+  }}
+/>
+```
+
+<Callout type="info">
+  For more information on configuration options, refer to the
+  [Configuration options for Reference docs](https://redocly.com/docs/api-reference-docs/configuration/functionality/).
+  Look for options marked "Supported in Redoc CE".
+</Callout>
+
+### Loading Callback
+
+You can add an `onLoaded` callback that fires when Redoc finishes rendering:
+
+```jsx
+<RedocStandalone
+  specUrl="http://petstore.swagger.io/v2/swagger.json"
+  onLoaded={(error) => {
+    if (!error) {
+      console.log('Yay!');
+    }
+  }}
+/>
+```
+
+<Callout type="tip">
+  The `onLoaded` callback is useful for handling loading states or errors in your application.
+</Callout>
