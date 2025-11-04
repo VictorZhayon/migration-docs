@@ -7,26 +7,19 @@ export const metadata = {
 
 # Redoc deployment guide
 
-Redoc offers multiple options for rendering your OpenAPI definition.
-You should select the option that best fits your needs.
+Redoc offers multiple options for rendering your OpenAPI definition. You should select the option that best fits your needs.
 
 ## Deployment Options
 
-- **[Live demo](https://redocly.github.io/redoc/)**  
-  The live demo offers a fast way to see how your OpenAPI renders with Redoc.
-  A version of the Swagger Petstore API is displayed by default. To test it with your own OpenAPI definition, enter the URL for your
-  definition and select **TRY IT**.
-
-- **[HTML element](./html)**  
+- [**Live demo**](https://redocly.github.io/redoc/)\
+  The live demo offers a fast way to see how your OpenAPI renders with Redoc. A version of the Swagger Petstore API is displayed by default. To test it with your own OpenAPI definition, enter the URL for your definition and select **TRY IT**.
+- [**HTML element**](./html)\
   Using the HTML element works well for typical website deployments.
-
-- **[React component](./react)**  
+- [**React component**](./react)\
   Using the React component is an option for users with a React-based application.
-
-- **[Docker image](./docker)**  
+- [**Docker image**](./docker)\
   Using the Docker image works in a container-based deployment.
-
-- **[Redocly CLI](./RedoclyCLI)**  
+- [**Redocly CLI**](./redocly_cli)\
   Using the Redocly CLI is an option for users who prefer to use a command-line interface.
 
 ## Before you start
@@ -46,11 +39,10 @@ You need an OpenAPI definition. For testing purposes, you can use one of the fol
   </Tab>
 </Tabs>
 
-<Callout type="info">
-  **OpenAPI specification**  
-  For more information on the OpenAPI specification, refer to the [Learning OpenAPI 3](https://redocly.com/docs/resources/learning-openapi/)
-  section in the documentation.
-</Callout>
+<info>
+  **OpenAPI specification**\
+  For more information on the OpenAPI specification, refer to the [Learning OpenAPI 3](https://redocly.com/docs/resources/learning-openapi/) section in the documentation.
+</info>
 
 ### How to run Redoc locally
 
@@ -59,29 +51,30 @@ If you want to view your Redoc output locally, you can simulate an HTTP server.
 <Tabs>
   <Tab title="Python">
     If you have [Python 3](https://www.python.org/downloads/) installed:
+
     ```bash
     python3 -m http.server
     ```
 
     If you have [Python 2](https://www.python.org/downloads/) installed:
+
     ```bash
     python -m SimpleHTTPServer 8000
     ```
 
-    The output after entering the command provides the local URL where the preview can be accessed.
-    To exit the preview, use `control-C`.
+    The output after entering the command provides the local URL where the preview can be accessed. To exit the preview, use `control-C`.
   </Tab>
   <Tab title="Node.js">
     If you have [Node.js](https://nodejs.org/en/download/) installed:
+
     ```bash
     # Install http-server globally
     npm install -g http-server
-
+    
     # Start the server
     http-server
     ```
 
-    The output after entering the command provides the local URL where the preview can be accessed.
-    To exit the preview, use `control-C`.
+    The output after entering the command provides the local URL where the preview can be accessed. To exit the preview, use `control-C`.
   </Tab>
 </Tabs>
