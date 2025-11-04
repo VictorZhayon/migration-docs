@@ -119,13 +119,13 @@ Example implementation:
 
 ### Self-host dependencies
 
-<Tabs items={['CDN', 'Self-hosted']}>
-  <Tab>
+<Tabs>
+  <Tab title="CDN">
     ```html
     <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
     ```
   </Tab>
-  <Tab>
+  <Tab title="Self-hosted">
     First install `redoc`:
     ```bash
     npm install redoc
@@ -133,4 +133,7 @@ Example implementation:
     
     Then reference locally:
     ```html
-    <script src="node_modules/redoc/bundles/redoc.standalone.js">
+    <script src="node_modules/redoc/bundles/redoc.standalone.js"></script>
+    ```
+  </Tab>
+</Tabs>

@@ -1,0 +1,111 @@
+import { Callout, Tabs, Tab } from 'nextra/components'
+
+export const metadata = {
+  title: 'Configure Redoc',
+  description: 'Complete configuration reference for Redoc documentation'
+}
+
+# Configure Redoc
+
+Getting your documentation just right is important, and Redoc comes with many configuration options to help you succeed in that mission.
+
+Each deployment type has documentation on how to configure options for that type of Redoc project. This page lists all the options you can use with Redoc.
+
+**Versions: 2.x**
+
+<Callout type="success">
+  **Client-side configuration**
+
+  Using Redoc as a standalone (HTML or React) tool, these options must be presented in [kebab case](https://en.wikipedia.org/wiki/Letter_case#Kebab_case).
+  For example:
+  - `scrollYOffset` becomes `scroll-y-offset`
+  - `expandResponses` becomes `expand-responses`
+</Callout>
+
+## Functional settings
+
+<Tabs>
+  <Tab title="Basic Options">
+    ### Core Settings
+    
+    | Option | Description | Default |
+    | ------ | ----------- | ------- |
+    | `disableSearch` | Disables search indexing and hides search box | `false` |
+    | `minCharacterLengthToInitSearch` | Minimum characters for search | `3` |
+    | `hideDownloadButtons` | Hides the download button | `false` |
+    | `hideLoading` | Hides loading animation | `false` |
+  </Tab>
+  <Tab title="Rendering Options">
+    ### Display Configuration
+    
+    | Option | Description | Default |
+    | ------ | ----------- | ------- |
+    | `hideSchemaTitles` | Hides schema titles | `false` |
+    | `jsonSamplesExpandLevel` | Default expansion level for JSON samples | `2` |
+    | `maxDisplayedEnumValues` | Max enum values to show | `all` |
+    | `onlyRequiredInSamples` | Show only required fields in samples | `false` |
+    
+  </Tab>
+  <Tab title="Advanced Options">
+    ### Advanced Features
+    
+    | Option | Description | Default |
+    | ------ | ----------- | ------- |
+    | `sortRequiredPropsFirst` | Sort required properties first | `false` |
+    | `schemasExpansionLevel` | Auto-expand schemas level | `0` |
+    | `scrollYOffset` | Vertical scroll offset | `0` |
+    | `showExtensions` | Show spec extensions | `false` |
+  </Tab>
+</Tabs>
+
+## Theme settings
+
+You can customize the look and feel of your documentation with these theme options:
+
+```yaml
+theme:
+  # Typography
+  typography:
+    fontSize: '14px'
+    fontFamily: 'Roboto, sans-serif'
+    headings:
+      fontFamily: 'Montserrat, sans-serif'
+      fontWeight: '400'
+    
+  # Colors and Layout
+  colors:
+    primary:
+      main: '#32329f'
+  
+  # Sidebar Configuration
+  sidebar:
+    width: '260px'
+    backgroundColor: '#fafafa'
+    textColor: '#333333'
+```
+
+<Callout type="info">
+  Check our [theme customization guide](./customization) for detailed examples and best practices.
+</Callout>
+
+## Additional customization
+
+### Security Definition location
+
+You can inject the Security Definitions widget into any place in your definition `description`.
+For more information, refer to [Security definitions injection](./security-definitions-injection).
+
+### OpenAPI specification extensions
+
+<Callout type="tip">
+  Redoc supports several custom OpenAPI extensions to enhance your documentation:
+</Callout>
+
+- `x-logo` - Specify API logo
+- `x-traitTag` - Handle common patterns like Pagination
+- `x-codeSamples` - Add operation code samples
+- `x-examples` - Specify JSON request examples
+- `x-nullable` - Mark schema parameters as nullable
+- `x-displayName` - Set friendly menu category names
+- `x-tagGroups` - Group sidebar menu tags
+- `x-servers` - Specify different API servers

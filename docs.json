@@ -9,23 +9,17 @@
   },
   "favicon": "images/redocly-white-logo.svg",
   "navigation": {
-    "pages": [],
+    "tab": "Redocly CLI",
+    "pages": [
+      "deployment/introduction",
+      "deployment/redocly_cli"
+    ]
+  },
   "logo": {
     "light": "/logo/redocly-white-logo.svg",
     "dark": "/logo/redocly-black-logo.svg"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
   },
   "contextual": {
     "options": [
@@ -33,10 +27,10 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/Redocly",
+      "github": "https://github.com/Redocly",
+      "linkedin": "https://linkedin.com/company/redocly",
+      "youtube": "https://youtube.com/@redocly"
     }
   }
-}
 }

@@ -1,0 +1,134 @@
+import { Callout, Tabs, Tab } from 'nextra/components'
+
+export const metadata = {
+  title: 'Redoc Vendor Extensions',
+  description: 'Learn about Redoc-specific OpenAPI extensions to enhance your API documentation'
+}
+
+# Redoc Vendor Extensions
+
+Redoc supports several vendor extensions that enhance your OpenAPI documentation. These extensions are prefixed with `x-` and can be used throughout your OpenAPI specification.
+
+## Available Extensions
+
+### Logo Configuration (`x-logo`)
+
+Use this extension to add a logo to your API documentation:
+
+```yaml
+info:
+  x-logo:
+    url: 'https://example.com/logo.png'
+    backgroundColor: '#FFFFFF'
+    altText: 'API Logo'
+    href: 'https://api.example.com'
+```
+
+### Tag Grouping (`x-tagGroups`)
+
+Group your API endpoints in the sidebar:
+
+```yaml
+x-tagGroups:
+  - name: Core Resources
+    tags:
+      - Users
+      - Products
+  - name: Advanced Features
+    tags:
+      - Analytics
+      - Settings
+```
+
+### Code Samples (`x-codeSamples`)
+
+Add language-specific code examples to operations:
+
+```yaml
+paths:
+  /users:
+    get:
+      x-codeSamples:
+        - lang: 'JavaScript'
+          source: |
+            fetch('/users')
+              .then(res => res.json())
+              .then(data => console.log(data));
+        - lang: 'Python'
+          source: |
+            import requests
+            response = requests.get('/users')
+            print(response.json())
+```
+
+### Display Names (`x-displayName`)
+
+Set friendly names for your endpoints and schemas:
+
+```yaml
+paths:
+  /users:
+    get:
+      tags:
+        - Users
+      x-displayName: List All Users
+```
+
+### Server Configuration (`x-servers`)
+
+Define multiple server environments:
+
+```yaml
+x-servers:
+  - url: https://api.prod.example.com
+    description: Production
+  - url: https://api.staging.example.com
+    description: Staging
+```
+
+## Usage Tips
+
+<Callout type="warning">
+  These extensions are Redoc-specific and may not be recognized by other OpenAPI documentation tools.
+</Callout>
+
+<Tabs items={['Good Practice', 'Common Issues']}>
+  <Tab>
+    - Use meaningful group names in `x-tagGroups`
+    - Provide clear code samples
+    - Keep display names concise
+    - Use high-quality logo images
+  </Tab>
+  <Tab>
+    - Missing logo files
+    - Inconsistent tag names
+    - Invalid code samples
+    - Broken server URLs
+  </Tab>
+</Tabs>
+
+## Examples
+
+### Complete Example
+
+```yaml
+openapi: 3.0.0
+info:
+  title: Example API
+  x-logo:
+    url: 'https://example.com/logo.png'
+x-tagGroups:
+  - name: Core
+    tags: [Users, Products]
+paths:
+  /users:
+    get:
+      x-displayName: List Users
+      x-codeSamples:
+        - lang: JavaScript
+          source: 'fetch("/users")'
+```
+
+<Callout type="info">
+  For more examples and detailed usage, check our [API Examples](./examples) section.
+</Callout>

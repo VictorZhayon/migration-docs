@@ -7,7 +7,6 @@ export const metadata = {
 
 # How to use the Redoc React component
 
-<Steps>
 
 ### Install Dependencies
 
@@ -24,21 +23,19 @@ import { RedocStandalone } from 'redoc';
 ```
 
 ### Use the Component
-
-<Tabs items={['URL Specification', 'Object Specification']}>
-  <Tab>
+<Tabs>
+  <Tab title="URL Specification">
     ```jsx
     <RedocStandalone specUrl="url/to/your/spec"/>
     ```
   </Tab>
-  <Tab>
+  <Tab title="Object Specification">
     ```jsx
     <RedocStandalone spec={/* spec as an object */}/>
     ```
   </Tab>
 </Tabs>
 
-</Steps>
 
 ## Configuration Options
 
