@@ -11,7 +11,7 @@
   "navigation": {
     "tab": "Redocly CLI",
     "pages": [
-      "deployment/introduction",
+      "deployment/Introduction",
       "deployment/redocly_cli"
     ]
   },
