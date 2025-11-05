@@ -1,3 +1,7 @@
+---
+title: "Redoc: Open source API documentation tool"
+---
+
 import { Callout } from 'nextra/components'
 
 export const metadata = {
@@ -13,19 +17,14 @@ Redoc is based around a three panel layout, with clear sections for navigation, 
 
 ## Headline features
 
-* Modern layout with extensive customization options.
-* Support for OpenAPI 3.1, 3.0 and older 2.0 and Swagger formats.
-* Embed or build standalone HTML documentation.
-* CLI tool for easy automation and local development.
+- Modern layout with extensive customization options.
+- Support for OpenAPI 3.1, 3.0 and older 2.0 and Swagger formats.
+- Embed or build standalone HTML documentation.
+- CLI tool for easy automation and local development.
 
 ## Demo
 
-<iframe 
-  src="https://redocly.github.io/redoc/"
-  width="100%"
-  height="500px"
-  style={{ border: '1px solid #ccc', borderRadius: '4px' }}
-/>
+<iframe src="https://redocly.github.io/redoc/" width="100%" height="500px" style={{ border:"1px solid #ccc",borderRadius:"4px" }} />
 
 ## Usage
 
@@ -41,9 +40,9 @@ npx @redocly/cli build-docs openapi.yaml
 
 The tool outputs by default to a file named `redoc-static.html` that you can open in your browser.
 
-<Callout type="info">
+<Info>
   [Redocly CLI](https://github.com/Redocly/redocly-cli/) does more than docs, check it out and add linting, bundling and more to your API workflow.
-</Callout>
+</Info>
 
 ### Add an HTML element to the page
 
@@ -66,8 +65,8 @@ Check out the [deployment documentation](./deployment/intro) for more options, a
 
 Redoc is highly configurable. Each deployment option accepts configuration in a way that's appropriate to that platform, but the options are the same for each. For example:
 
-* Using [Redocly CLI](../cli), configuration goes in the `redocly.yaml` file, or can be supplied as command line parameters, such as `--theme.openapi.disableSearch`.
-* Using HTML or React, configure by setting `option` in the tag.
+- Using [Redocly CLI](../cli), configuration goes in the `redocly.yaml` file, or can be supplied as command line parameters, such as `--theme.openapi.disableSearch`.
+- Using HTML or React, configure by setting `option` in the tag.
 
 Here's a sample `redocly.yaml` configuration file, showing a few common settings and tweaking some of the visual theme settings:
 
@@ -101,11 +100,15 @@ redocly build-docs openapi.yaml
 
 <div className="steps-container">
 ### 1. New to OpenAPI?
-Try the [OpenAPI starter project](./deployment/cli) for a great introduction.
+
+Try the [OpenAPI starter project](./deployment/redocly_cli) for a great introduction.
 
 ### 2. Ready to build?
+
 Go to the [Redoc quickstart](./quickstart) and get started with your existing OpenAPI file.
 
 ### 3. Learn more
+
 Visit [Redoc on GitHub](https://github.com/Redocly/redoc) to explore the project further.
+
 </div>

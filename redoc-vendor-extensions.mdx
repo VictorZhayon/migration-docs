@@ -1,3 +1,7 @@
+---
+title: "Redoc Vendor Extensions"
+---
+
 import { Callout, Tabs, Tab } from 'nextra/components'
 
 export const metadata = {
@@ -88,18 +92,18 @@ x-servers:
 
 ## Usage Tips
 
-<Callout type="warning">
+<Warning>
   These extensions are Redoc-specific and may not be recognized by other OpenAPI documentation tools.
-</Callout>
+</Warning>
 
-<Tabs items={['Good Practice', 'Common Issues']}>
-  <Tab>
+<Tabs>
+  <Tab title="Tip 1">
     - Use meaningful group names in `x-tagGroups`
     - Provide clear code samples
     - Keep display names concise
     - Use high-quality logo images
   </Tab>
-  <Tab>
+  <Tab title="Tip 2">
     - Missing logo files
     - Inconsistent tag names
     - Invalid code samples
@@ -129,6 +133,6 @@ paths:
           source: 'fetch("/users")'
 ```
 
-<Callout type="info">
+<Info>
   For more examples and detailed usage, check our [API Examples](./examples) section.
-</Callout>
+</Info>
