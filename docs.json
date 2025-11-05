@@ -12,7 +12,7 @@
     "tab": "Redocly CLI",
     "pages": [
       "deployment/Introduction",
-      "quickstart",
+      "/quickstart",
       "deployment/redocly_cli"
     ]
   },
