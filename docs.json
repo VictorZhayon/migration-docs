@@ -12,7 +12,7 @@
     "groups": [
       {
         "group": "Redocly CLI",
-        "icon": "notebook-text",
+        "icon": "square-terminal",
         "expanded": false,
         "pages": [
           "deployment/Introduction",
