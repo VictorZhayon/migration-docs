@@ -68,25 +68,27 @@ Redoc is highly configurable. Each deployment option accepts configuration in a 
 
 Here's a sample `redocly.yaml` configuration file, showing a few common settings and tweaking some of the visual theme settings:
 
-```yaml
-theme:
-  openapi:
-    disableSearch: true
-    expandResponses: 200,202
-    jsonSamplesExpandLevel: 1
-
-    theme:
-      sidebar:
-        backgroundColor: '#eae0cc'
-        textColor: '#3d005b'
-      colors:
-        primary:
-          main: '#660099'
-      typography:
-        fontSize: 14pt
-        headings:
-          fontWeight: bold
-```
+<Expandable title="redocly.yaml">
+  ```yaml
+  theme:
+    openapi:
+      disableSearch: true
+      expandResponses: 200,202
+      jsonSamplesExpandLevel: 1
+  
+      theme:
+        sidebar:
+          backgroundColor: '#eae0cc'
+          textColor: '#3d005b'
+        colors:
+          primary:
+            main: '#660099'
+        typography:
+          fontSize: 14pt
+          headings:
+            fontWeight: bold
+  ```
+</Expandable>
 
 Redocly CLI detects a file named `redocly.yaml` in the same directory as you run the command and uses it. See the documentation with a command like this:
 
