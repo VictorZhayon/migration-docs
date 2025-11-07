@@ -28,32 +28,32 @@ Redoc is based around a three panel layout, with clear sections for navigation, 
 
 Redoc is provided as a CLI tool (also distributed as a Docker image), HTML tag, and React component.
 
-### Generate documentation from the CLI
+<Accordion title="  Generate documentation from the CLI" icon="terminal" iconType="solid">
+  If you have Node installed, quickly generate documentation using npx:
 
-If you have Node installed, quickly generate documentation using `npx`:
+  ```bash
+  npx @redocly/cli build-docs openapi.yaml
+  ```
 
-```bash
-npx @redocly/cli build-docs openapi.yaml
-```
-
-The tool outputs by default to a file named `redoc-static.html` that you can open in your browser.
+  The tool outputs by default to a file named `redoc-static.html` that you can open in your browser.
+</Accordion>
 
 <Info>
   [Redocly CLI](https://github.com/Redocly/redocly-cli/) does more than docs, check it out and add linting, bundling and more to your API workflow.
 </Info>
 
-### Add an HTML element to the page
+<Accordion title="  Add an HTML element to the page" icon="code" iconType="solid">
+  Create an HTML page, or edit an existing one, and add the following:
 
-Create an HTML page, or edit an existing one, and add the following:
+  ```html
+  <redoc spec-url="http://petstore.swagger.io/v2/swagger.json"></redoc>
+  <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
+  ```
 
-```html
-<redoc spec-url="http://petstore.swagger.io/v2/swagger.json"></redoc>
-<script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
-```
+  Open the HTML file in your browser, and your API documentation is shown on the page.
 
-Open the HTML file in your browser, and your API documentation is shown on the page.
-
-Add your own `spec-url` to the `<redoc>` tag; this attribute can also be a local file. The JavaScript library can also be installed locally using `npm` and served from your own server, see the [HTML deployment documentation](https://redocly.com/docs/redoc/deployment/html/) for more details.
+  Add your own `spec-url` to the `<redoc>` tag; this attribute can also be a local file. The JavaScript library can also be installed locally using `npm` and served from your own server, see the [HTML deployment documentation](https://redocly.com/docs/redoc/deployment/html/) for more details.
+</Accordion>
 
 ### More usage options
 
