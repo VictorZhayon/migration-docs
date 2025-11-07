@@ -9,11 +9,17 @@
   },
   "favicon": "images/redocly-white-logo.svg",
   "navigation": {
-    "tab": "Redocly CLI",
-    "pages": [
-      "deployment/Introduction",
-      "/quickstart",
-      "deployment/redocly_cli"
+    "groups": [
+      {
+        "group": "Redocly CLI",
+        "icon": "notebook-text",
+        "expanded": false,
+        "pages": [
+          "deployment/Introduction",
+          "/quickstart",
+          "deployment/redocly_cli"
+        ]
+      }
     ]
   },
   "logo": {
