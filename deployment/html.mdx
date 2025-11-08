@@ -7,42 +7,42 @@ export const metadata = {
 
 # Use Redoc in HTML
 
-To render API documentation in an HTML page, start with the template below and
-replace the `spec-url` value with the local file path or URL of your API
-description.
+To render API documentation in an HTML page, start with the template below and replace the `spec-url` value with the local file path or URL of your API description.
 
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Redoc</title>
-    <!-- needed for adaptive design -->
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">
-
-    <!--
-    Redoc doesn't change outer page styles
-    -->
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <redoc spec-url='http://petstore.swagger.io/v2/swagger.json'></redoc>
-    <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
-  </body>
-</html>
-```
-
-<Callout type="success">
-  **URL or local file**
+<Expandable title="Code example">
+  ```html
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Redoc</title>
+      <!-- needed for adaptive design -->
+      <meta charset="utf-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">
   
+      <!--
+      Redoc doesn't change outer page styles
+      -->
+      <style>
+        body {
+          margin: 0;
+          padding: 0;
+        }
+      </style>
+    </head>
+    <body>
+      <redoc spec-url='http://petstore.swagger.io/v2/swagger.json'></redoc>
+      <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
+    </body>
+  </html>
+  ```
+</Expandable>
+
+<success>
+  **URL or local file**
+
   Set `spec-url` to a relative path if the file is local, e.g. `spec-url=my-api.yaml`. Use a full URL like the example above if it's hosted elsewhere.
-</Callout>
+</success>
 
 Open the HTML file in your browser to see the HTML documentation rendering.
 
@@ -81,9 +81,9 @@ Check out the [list of options for theme configuration](../config#theme-settings
 
 ### The Redoc object
 
-<Callout type="info">
+<info>
   As an alternative to the HTML tag, you can initialize Redoc using JavaScript for dynamic content or to attach to existing containers.
-</Callout>
+</info>
 
 The Redoc object offers an `init` function:
 
@@ -92,6 +92,7 @@ Redoc.init(specOrSpecUrl, options, element, callback)
 ```
 
 Parameters:
+
 - `specOrSpecUrl`: JSON object with OpenAPI definition or file name/URL
 - `options`: See the [configuration reference](../config)
 - `element`: Target DOM element
@@ -99,23 +100,25 @@ Parameters:
 
 Example implementation:
 
-```html
-<!DOCTYPE html>
-<html>
-  <head />
-  <body>
-    <H1>Redoc in action</H1>
-    <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
-    <div id="redoc-container"></div>
-
-    <script>
-      Redoc.init('http://petstore.swagger.io/v2/swagger.json', {
-        "expandResponses": "200,400"
-      }, document.getElementById('redoc-container'))
-    </script>
-  </body>
-</html>
-```
+<Expandable title="Example implementation ">
+  ```html
+  <!DOCTYPE html>
+  <html>
+    <head />
+    <body>
+      <H1>Redoc in action</H1>
+      <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"> </script>
+      <div id="redoc-container"></div>
+  
+      <script>
+        Redoc.init('http://petstore.swagger.io/v2/swagger.json', {
+          "expandResponses": "200,400"
+        }, document.getElementById('redoc-container'))
+      </script>
+    </body>
+  </html>
+  ```
+</Expandable>
 
 ### Self-host dependencies
 
@@ -127,11 +130,13 @@ Example implementation:
   </Tab>
   <Tab title="Self-hosted">
     First install `redoc`:
+
     ```bash
     npm install redoc
     ```
-    
+
     Then reference locally:
+
     ```html
     <script src="node_modules/redoc/bundles/redoc.standalone.js"></script>
     ```

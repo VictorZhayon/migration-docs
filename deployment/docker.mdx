@@ -9,34 +9,32 @@ export const metadata = {
 
 Redoc is available as a pre-built Docker image in [Docker Hub](https://hub.docker.com/r/redocly/redoc/).
 
-<Callout type="info">
+<info>
   Make sure you have [Docker](https://docs.docker.com/get-docker/) installed before proceeding.
-</Callout>
+</info>
 
 ## Quick Start
 
-Pull the image with the following command:
+<Steps>
+  <Step title="Pull the image with the following command:" titleSize="p">
+    ```
+    docker pull redocly/redoc
+    ```
+  </Step>
+  <Step title="Then run the image:">
+    ```
+    docker run -p 8080:80 redocly/redoc
+    ```
+  </Step>
+</Steps>
 
-```docker
-docker pull redocly/redoc
-```
-
-Then run the image:
-
-```docker
-docker run -p 8080:80 redocly/redoc
-```
-
-<Callout type="success">
-  The preview starts on port 8080 and can be accessed at `http://localhost:8080`.
-  To exit the preview, use `control+C`.
-</Callout>
+<success>
+  The preview starts on port 8080 and can be accessed at `http://localhost:8080`. To exit the preview, use `control+C`.
+</success>
 
 ## Custom API Specification
 
-By default, Redoc starts with a demo Swagger Petstore OpenAPI definition located at
-http://petstore.swagger.io/v2/swagger.json. You can update this URL using
-the environment variable `SPEC_URL`.
+By default, Redoc starts with a demo Swagger Petstore OpenAPI definition located at http://petstore.swagger.io/v2/swagger.json. You can update this URL using the environment variable `SPEC_URL`.
 
 For example:
 
@@ -48,10 +46,8 @@ docker run -p 8080:80 -e SPEC_URL=https://api.example.com/openapi.json redocly/r
 
 ### Create a Dockerfile
 
-You can also create a Dockerfile with some predefined environment variables. Check out
-a sample [Dockerfile](https://github.com/Redocly/redoc/blob/main/config/docker/Dockerfile)
-in our code repo.
+You can also create a Dockerfile with some predefined environment variables. Check out a sample [Dockerfile](https://github.com/Redocly/redoc/blob/main/config/docker/Dockerfile) in our code repo.
 
-<Callout type="tip">
+<tip>
   Using a custom Dockerfile allows you to preconfigure environment variables and add additional customizations.
-</Callout>
+</tip>
