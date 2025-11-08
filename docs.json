@@ -28,6 +28,13 @@
   },
   "navbar": {
   },
+  "errors": {
+    "404": {
+      "redirect": true,
+      "title": "I can't be found",
+      "description": "What ever **happened** to this _page_?"
+    }
+  },
   "contextual": {
     "options": [
     ]
